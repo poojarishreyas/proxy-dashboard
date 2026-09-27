@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 
 export const config = {
-  // Everything except static assets and the gate itself. /api/ingest is excluded
-  // too — the CLI authenticates with its own bearer tokens, not the view cookie.
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|gate|api/ingest).*)']
+  // Everything except static assets and the gate itself (both the page and the
+  // route that issues its cookie — gating /api/gate would make it impossible to
+  // ever pass the gate). /api/ingest is excluded too: the CLI authenticates with
+  // its own bearer token, not the view cookie.
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|gate|api/gate|api/ingest).*)']
 };
 
 /**
