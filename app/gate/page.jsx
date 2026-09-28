@@ -38,8 +38,8 @@ function GateForm() {
     <form className="shell gate-card" onSubmit={submit}>
       <div className="core" style={{ padding: 28, borderRadius: 16 }}>
         <span className="eyebrow" style={{ marginBottom: 10, display: 'inline-flex' }}>shrey</span>
-        <h1>Team dashboard</h1>
-        <p>This dashboard shows everyone&apos;s captured Claude Code activity. Enter the shared passphrase to continue.</p>
+        <h1>Admin dashboard</h1>
+        <p>Live Claude Code activity from every machine running shrey. Enter the passphrase to continue.</p>
         <input type="password" autoFocus placeholder="Passphrase" value={key} onChange={(e) => setKey(e.target.value)} />
         {err && <div className="gate-err">{err}</div>}
         <button type="submit" disabled={busy || !key}>{busy ? 'Checking…' : 'Enter'}</button>
